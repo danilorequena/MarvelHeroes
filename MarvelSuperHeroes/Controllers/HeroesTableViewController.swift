@@ -71,6 +71,11 @@ class HeroesTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! HeroViewController
+        vc.hero = heroes[tableView.indexPathForSelectedRow!.row]
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
