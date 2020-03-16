@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HeroTableViewCell: UITableViewCell {
 
@@ -22,6 +23,21 @@ class HeroTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func prepareCell(with hero: Hero) {
+        lbName.text = hero.name
+        lbDescription.text = hero.description
+        if let url = URL(string: hero.thumbnail.url) {
+            ivThumb.kf.indicatorType = .activity
+            ivThumb.kf.setImage(with: url)
+        } else {
+            ivThumb.image = nil
+        }
+        ivThumb.clipsToBounds = true
+        ivThumb.layer.cornerRadius = ivThumb.frame.size.height / 2
+        ivThumb.layer.borderColor = UIColor.red.cgColor
+        ivThumb.layer.borderWidth = 2
     }
 
 }
