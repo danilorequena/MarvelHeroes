@@ -76,6 +76,14 @@ class HeroesTableViewController: UITableViewController {
         vc.hero = heroes[tableView.indexPathForSelectedRow!.row]
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == heroes.count - 10 && !loadingHeroes && heroes.count != total {
+            currentPage += 1
+            loadHeroes()
+            print("carregando mais herois")
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
