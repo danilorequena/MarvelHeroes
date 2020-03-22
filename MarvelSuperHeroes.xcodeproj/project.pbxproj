@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F5610FAB7FA93543E35237CD /* Pods_MarvelSuperHeroes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44076F4E3272FEDF01A2BBB6 /* Pods_MarvelSuperHeroes.framework */; };
 		FF198570241DB24000EFC364 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF19856F241DB24000EFC364 /* HeroTableViewCell.swift */; };
+		FF2C8BA424268E7F0043F18E /* HeroDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C8BA324268E7F0043F18E /* HeroDescriptionViewController.swift */; };
 		FFC30AFD241D6751006364C9 /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC30AFC241D6751006364C9 /* MarvelAPI.swift */; };
 		FFC30AFF241D6774006364C9 /* MarvelClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC30AFE241D6774006364C9 /* MarvelClasses.swift */; };
 		FFF32AB8241D5BE10058C4CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF32AB7241D5BE10058C4CD /* AppDelegate.swift */; };
@@ -27,6 +28,8 @@
 		44076F4E3272FEDF01A2BBB6 /* Pods_MarvelSuperHeroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelSuperHeroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		947E6FD26807DFE8747B6B35 /* Pods-MarvelSuperHeroes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelSuperHeroes.debug.xcconfig"; path = "Target Support Files/Pods-MarvelSuperHeroes/Pods-MarvelSuperHeroes.debug.xcconfig"; sourceTree = "<group>"; };
 		FF19856F241DB24000EFC364 /* HeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTableViewCell.swift; sourceTree = "<group>"; };
+		FF2C8BA224254C430043F18E /* MarvelSuperHeroes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarvelSuperHeroes.entitlements; sourceTree = "<group>"; };
+		FF2C8BA324268E7F0043F18E /* HeroDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDescriptionViewController.swift; sourceTree = "<group>"; };
 		FFC30AFC241D6751006364C9 /* MarvelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
 		FFC30AFE241D6774006364C9 /* MarvelClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClasses.swift; sourceTree = "<group>"; };
 		FFF32AB4241D5BE10058C4CD /* MarvelSuperHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelSuperHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +81,7 @@
 				FFF32AD1241D5C440058C4CD /* HeroesTableViewController.swift */,
 				FFF32AD3241D5C5C0058C4CD /* HeroViewController.swift */,
 				FF19856F241DB24000EFC364 /* HeroTableViewCell.swift */,
+				FF2C8BA324268E7F0043F18E /* HeroDescriptionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,6 +125,7 @@
 		FFF32AB6241D5BE10058C4CD /* MarvelSuperHeroes */ = {
 			isa = PBXGroup;
 			children = (
+				FF2C8BA224254C430043F18E /* MarvelSuperHeroes.entitlements */,
 				FFF32AB7241D5BE10058C4CD /* AppDelegate.swift */,
 				FFF32AB9241D5BE10058C4CD /* SceneDelegate.swift */,
 				FFC30AFB241D6730006364C9 /* Models */,
@@ -255,6 +260,7 @@
 				FF198570241DB24000EFC364 /* HeroTableViewCell.swift in Sources */,
 				FFF32ABA241D5BE10058C4CD /* SceneDelegate.swift in Sources */,
 				FFF32AD4241D5C5C0058C4CD /* HeroViewController.swift in Sources */,
+				FF2C8BA424268E7F0043F18E /* HeroDescriptionViewController.swift in Sources */,
 				FFC30AFD241D6751006364C9 /* MarvelAPI.swift in Sources */,
 				FFF32AD2241D5C440058C4CD /* HeroesTableViewController.swift in Sources */,
 			);
@@ -401,7 +407,9 @@
 			baseConfigurationReference = 947E6FD26807DFE8747B6B35 /* Pods-MarvelSuperHeroes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MarvelSuperHeroes/MarvelSuperHeroes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SM9KCJGMUP;
 				INFOPLIST_FILE = MarvelSuperHeroes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,6 +418,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dobigaster.MarvelSuperHeroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,7 +429,9 @@
 			baseConfigurationReference = 32F80DE6A46E0F0423C469DB /* Pods-MarvelSuperHeroes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MarvelSuperHeroes/MarvelSuperHeroes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SM9KCJGMUP;
 				INFOPLIST_FILE = MarvelSuperHeroes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -429,6 +440,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dobigaster.MarvelSuperHeroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

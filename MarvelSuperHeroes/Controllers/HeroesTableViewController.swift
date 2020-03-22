@@ -72,7 +72,7 @@ class HeroesTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! HeroViewController
+        let vc = segue.destination as! HeroDescriptionViewController
         vc.hero = heroes[tableView.indexPathForSelectedRow!.row]
     }
     

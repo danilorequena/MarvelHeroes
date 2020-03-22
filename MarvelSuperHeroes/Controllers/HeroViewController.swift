@@ -22,7 +22,8 @@ class HeroViewController: ViewController {
     }
     
     func loadWebView() {
-        let url = URL(string: hero.urls.first!.url)
+        let index = hero.urls[1].url
+        let url = URL(string: index)
         let request = URLRequest(url: url!)
         title = hero.name
         
@@ -30,7 +31,10 @@ class HeroViewController: ViewController {
         webView.navigationDelegate = self
         webView.load(request)
     }
-
+    @IBAction func close(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension HeroViewController: WKNavigationDelegate {
