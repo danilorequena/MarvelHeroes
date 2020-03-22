@@ -37,7 +37,7 @@ class HeroDescriptionViewController: UIViewController {
         lbDescription.text  = hero.description
         if let url  = URL(string: hero.thumbnail.url) {
             ivImage.kf.setImage(with: url)
-            
+            ivImage.layer.cornerRadius = 6
         } else {
             ivImage.image = nil
         }
